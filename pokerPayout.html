@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poker Payout Calculator</title>
+    <style>
+        /* Add some basic styling */
+        input[type="number"] {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+
+	<h1>Poker Payout Calculator</h1>
+
+	<!-- Step 1: Number of players and Initial Buy In -->
+	<div id="step1">
+		<h2>Step 1: Initial Settings</h2>
+		<label for="numPlayers">Number of Players:</label>
+		<input type="number" id="numPlayers" min="1">
+		<br>
+
+		<label for="initialBuyIn">Initial Buy In: $</label>
+		<input type="number" id="initialBuyIn" min="0">
+		<br>
+
+		<label for="chipColors">Number of Different Chip Colors:</label>
+		<input type="number" id="chipColors" min="1">
+		<br>
+
+		<label for="reBuyIn">Re-Buy-In:</label>
+		<input type="number" id="reBuyIn" min="0">
+		<br>
+
+		<button onclick="proceedToStep2()">Next</button>
+	</div>
+
+	<!-- Step 2: Chip values -->
+	<div id="step2" style="display:none;">
+		<h2>Step 2: Chip Values</h2>
+		<div id="chipValueInputs">
+			<!-- Chip value inputs will be appended here -->
+		</div>
+		<button onclick="proceedToStep3()">Next</button>
+	</div>
+
+	<!-- Step 3: Number of each chip type -->
+	<div id="step3" style="display:none;">
+		<h2>Step 3: Number of Each Chip Type Per Person</h2>
+		<div id="chipCountInputs">
+			<!-- Chip count inputs will be appended here -->
+		</div>
+		<button onclick="proceedToStep4()">Next</button>
+	</div>
+
+	<!-- Step 4: Players' final chip value -->
+	<div id="step4" style="display:none;">
+		<h2>Step 4: Final Chip Value for Each Player</h2>
+		<div id="playerFinalValueInputs"></div>
+		<button onclick="calculateTotal()">Calculate Payout</button>
+	</div>
+
+	<div id="playerPayouts"></div>
+
+	<!-- Display total value
+	<h2>Total Value of Chips:</h2>
+	<div id="totalValue">0</div> -->
+	<script src="pokerPayout.js"></script>
+
+</body>
+</html>
